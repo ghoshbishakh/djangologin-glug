@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}User Profile{% endblock %}
+
+
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h3>Welcome, {{ user.username }}. Thanks for logging in.</h3>
+    <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
+    <h2>First Name: {{ user.first_name }}</h2>
+{% else %}
+    <h3>Welcome! Please log in to view your profile.</h3>
+    <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
+{% endif %}
+{% endblock %}
