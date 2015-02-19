@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from forms import UserForm
 from forms import CreateUserForm
 
@@ -8,7 +9,9 @@ def home(request):
 
 
 def update_user(request, template_name="profiles/update_user.html"):
-    if request.method == "POST":
+    if not request.user.is_authenticated():
+        return redirect('profiles.views.home')
+    elif request.method == "POST":
         form = UserForm(data=request.POST, instance=request.user)
         if form.is_valid():
             user = form.save(commit=False)
