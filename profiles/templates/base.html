@@ -1,10 +1,18 @@
 <html>
-	<head><title>Glug Auditions</title></head>
-	<div>
-		<h1>Simple Login System Using Django</h1>
-		<h2>{% block title %}{% endblock %}</h2>
-	</div>
-	<div>
-		{% block content %}{% endblock %}
-	</div>
+	<head>
+		<title>Glug Auditions</title>
+		{% load staticfiles %}
+
+		<link rel="stylesheet" type="text/css" href="{% static 'profiles/base.css' %}" />
+	</head>
+	
+
+	<body>
+		<div id="header">
+			<h1>Simple Login System Using Django</h1>
+		</div>
+		<div>
+			{% block content %}{% endblock %}
+		</div>
+	</body>
 </html>

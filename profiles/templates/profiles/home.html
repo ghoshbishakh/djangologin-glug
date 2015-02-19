@@ -1,16 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}User Profile{% endblock %}
+{% block title %}{% endblock %}
 
 
 
 {% block content %}
 {% if user.is_authenticated %}
-    <h3>Welcome, {{ user.username }}. Thanks for logging in.</h3>
-    <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
+	<div id="sub-header">Profile Information</div>
+    <div class="content">
+    <h3>Welcome, {{ user.username }}. Thanks for logging in.</h3><hr>
+    <span class="button"><a href="{% url 'django.contrib.auth.views.logout' %}">logout</a></span>
+    <span class="button"><a href={% url 'profiles.views.update_user' %}>edit</a></span>
+    <hr>
     <h2>First Name: {{ user.first_name }}</h2>
+    <h2>Last Name: {{ user.last_name }}</h2>
+    <h2>Email ID: {{ user.email }}</h2>
+    <h2>Date Joined: {{ user.date_joined }}</h2>
+    </div>
+
 {% else %}
-    <h3>Welcome! Please log in to view your profile.</h3>
-    <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
+
+    <div id="sub-header">You must Log In first to view/edit your profile information</div>
+    <br>
+    <span class="button"><a href="{% url 'django.contrib.auth.views.login' %}">login</a></span>
+    <span class="button"><a href={% url 'profiles.views.create_user' %}>sign Up</a></span>
 {% endif %}
 {% endblock %}

@@ -1,0 +1,39 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	background: #9cffb7;
+	color: #1a1a1a;
+	padding: 2em;
+}
+
+#sub-header {
+    background: none repeat scroll 0 0 #9daadc;
+    color: #1a1a1a;
+    font-size: 1.4em;
+    padding: 1em;
+    padding-left: 2em;
+}
+
+.content {
+	margin: 0 auto;
+	padding: 2em;
+}
+
+
+.content h2 {
+    background: none repeat scroll 0 0 #f2f2f2;
+    color: #1c1c1c;
+}
+
+.button {
+    background: none repeat scroll 0 0 #e5e5e5;
+    font-size: 1.2em;
+    margin: 1em;
+}
