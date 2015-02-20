@@ -1,5 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="sub-header">Update Profile</div>
 <form action="." method="post">
     {% csrf_token %}
-    {{ form }}
+    <table>
+    {{ form.as_table }}
+    </table>
     <input type="submit" value="Submit" />
 </form>
+{% endblock %}
